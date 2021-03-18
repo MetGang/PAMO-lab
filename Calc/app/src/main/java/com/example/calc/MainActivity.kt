@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity()
         exprDisplay = findViewById(R.id.exprDisplay)
     }
 
-    fun onInput(view: View)
+    fun input(view: View)
     {
         if (error)
         {

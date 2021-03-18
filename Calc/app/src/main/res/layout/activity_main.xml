@@ -44,7 +44,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnSeven"/>
 
             <Button
@@ -52,7 +52,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnEight"/>
 
             <Button
@@ -60,7 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnNine"/>
 
             <Button
@@ -68,7 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnDivide"/>
         </TableRow>
 
@@ -83,7 +83,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnFour"/>
 
             <Button
@@ -91,7 +91,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnFive"/>
 
             <Button
@@ -99,7 +99,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnSix"/>
 
             <Button
@@ -107,7 +107,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnMultiply"/>
         </TableRow>
 
@@ -122,7 +122,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnOne"/>
 
             <Button
@@ -130,7 +130,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnTwo"/>
 
             <Button
@@ -138,7 +138,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnThree"/>
 
             <Button
@@ -146,7 +146,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnSubtract"/>
         </TableRow>
 
@@ -161,7 +161,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnDecimal"/>
 
             <Button
@@ -169,7 +169,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnZero"/>
 
             <Button
@@ -185,7 +185,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:onClick="onInput"
+                android:onClick="input"
                 android:id="@+id/btnAdd"/>
         </TableRow>
 
