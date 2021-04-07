@@ -1,4 +1,4 @@
-package com.example.calc
+package com.example.calcex
 
 import org.junit.Test
 
