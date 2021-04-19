@@ -2,6 +2,8 @@ package com.example.vaccinator
 
 import android.content.res.Resources
 import android.graphics.*
+import android.util.Log
+import kotlin.math.truncate
 
 class Background constructor(
     screenX: Int,
@@ -9,7 +11,7 @@ class Background constructor(
     res: Resources
 ) : GameObject() {
 
-    private var bitmap: Bitmap
+    var bitmap: Bitmap
 
     init {
         this.bitmap = BitmapFactory.decodeResource(res, R.drawable.background)
@@ -20,7 +22,7 @@ class Background constructor(
         this.translatePosition(PointF(offset, 0.0f))
 
         if (this.getPosition().x + this.bitmap.width < 0) {
-            this.setPosition(PointF(this.bitmap.width.toFloat(), this.getPosition().y))
+            this.setPosition(PointF(truncate(this.bitmap.width.toFloat()), this.getPosition().y))
         }
     }
 

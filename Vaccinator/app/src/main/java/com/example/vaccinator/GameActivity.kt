@@ -3,6 +3,7 @@ package com.example.vaccinator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 
@@ -27,7 +28,9 @@ class GameActivity : AppCompatActivity() {
         val width = displayMetrics.widthPixels
         val height = displayMetrics.heightPixels
 
-        gameView = GameView(this, width, height)
+        gameView = GameView(this, width, height) {
+            finish()
+        }
 
         setContentView(gameView)
     }

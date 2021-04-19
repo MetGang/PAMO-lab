@@ -94,14 +94,5 @@ abstract class GameObject(
             truncate(this.position.y - this.origin.y),
             Paint()
         )
-
-        val paint = Paint()
-        paint.color = Color.argb(0.3f, 1.0f, 0.0f, 1.0f)
-        canvas.drawCircle(
-            truncate(this.position.x),
-            truncate(this.position.y),
-            this.radius,
-            paint
-        )
     }
 }

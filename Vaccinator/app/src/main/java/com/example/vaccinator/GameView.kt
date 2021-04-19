@@ -11,7 +11,8 @@ import kotlin.random.Random
 class GameView constructor(
     context: Context,
     private var screenX: Int,
-    private var screenY: Int
+    private var screenY: Int,
+    private var onGameOver: () -> Unit
 ) : SurfaceView(context), Runnable {
 
     private var thread: Thread?
@@ -35,14 +36,13 @@ class GameView constructor(
         firstBackground = Background(screenX, screenY, resources)
         secondBackground = Background(screenX, screenY, resources)
 
-        secondBackground.setPosition(PointF(screenX.toFloat(), 0.0f))
+        secondBackground.setPosition(PointF(firstBackground.bitmap.width.toFloat(), 0.0f))
     }
 
     override fun run() {
         while (isRunning) {
             update()
             render()
-            sleep()
         }
     }
 
@@ -50,7 +50,6 @@ class GameView constructor(
         if (System.currentTimeMillis() - spawnCooldown > 2000) {
             val y = ((screenY * 0.2).toInt()..(screenY * 0.8).toInt()).random().toFloat()
             val virus = Virus(resources)
-            Log.v("xD", screenX.toString() + " " + virus.getRadius().toString())
             virus.setPosition(PointF(screenX.toFloat() + virus.getRadius() * 4.0f, y))
             viruses.add(virus)
             spawnCooldown = System.currentTimeMillis()
@@ -62,26 +61,23 @@ class GameView constructor(
         gun.move(8.0f)
         gun.adjustPosition(RectF(0.0f, 0.0f, screenX.toFloat(), screenY.toFloat()))
 
-        syringes.forEach {
-            it.moveHorizontally(9.0f)
+        syringes.forEach { syringe ->
+            syringe.moveHorizontally(9.0f)
         }
 
-        viruses.forEach {
-            it.moveHorizontally(-5.0f)
-        }
+        viruses.forEach { virus ->
+            virus.moveHorizontally(-5.0f)
 
-        syringes.forEach {
-            val syringe = it
-            viruses.forEach {
-                val virus = it
+            if (virus.getPosition().x < 0) {
+                gameOver()
+            }
 
-                if (syringe.collides(virus)) {
-                    syringe.kill()
-                    virus.kill()
-                }
-
-                if (virus.collides(gun)) {
-                    virus.kill()
+            syringes.forEach { syringe ->
+                run {
+                    if (virus.collides(syringe)) {
+                        virus.kill()
+                        syringe.kill()
+                    }
                 }
             }
         }
@@ -107,8 +103,8 @@ class GameView constructor(
         }
     }
 
-    private fun sleep() {
-//        Thread.sleep(17)
+    private fun gameOver() {
+        onGameOver()
     }
 
     fun resume() {
@@ -135,7 +131,9 @@ class GameView constructor(
                 }
                 else {
                     if (System.currentTimeMillis() - shotCooldown > 500) {
-                        syringes.add(Syringe(PointF(gun.getPosition().x + 100.0f, gun.getPosition().y), resources))
+                        val syringe = Syringe(resources)
+                        syringe.setPosition(PointF(gun.getPosition().x + gun.getRadius() + 8.0f, gun.getPosition().y))
+                        syringes.add(syringe)
                         shotCooldown = System.currentTimeMillis()
                     }
                 }
