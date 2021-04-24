@@ -1,12 +1,13 @@
 package com.example.vaccinator
 
-import android.content.Intent
+import android.annotation.SuppressLint
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_chart.*
 
-class MainActivity : AppCompatActivity() {
+class ChartActivity : AppCompatActivity() {
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,14 +19,9 @@ class MainActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_IMMERSIVE)
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_chart)
 
-        tap_to_play.setOnClickListener {
-            startActivity(Intent(this, GameActivity::class.java))
-        }
-
-        tap_to_chart.setOnClickListener {
-            startActivity(Intent(this, ChartActivity::class.java))
-        }
+        webview.settings.javaScriptEnabled = true
+        webview.loadUrl("https://www.worldometers.info/coronavirus/")
     }
 }

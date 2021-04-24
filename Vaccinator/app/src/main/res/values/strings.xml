@@ -2,4 +2,5 @@
     <string name="app_name">Vaccinator</string>
     <string name="background_image_desc">Background image</string>
     <string name="tap_to_play">Tap to play</string>
+    <string name="tap_to_chart">Tap to chart</string>
 </resources>
