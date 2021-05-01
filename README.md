@@ -11,3 +11,11 @@
 ### Zad 3
 
 [Vaccinator](Vaccinator/)
+
+### Zad 4
+
+Kotlin update
+
+[Calc](Calc/)
+[CalcEx](CalcEx/)
+[Vaccinator](Vaccinator/)
